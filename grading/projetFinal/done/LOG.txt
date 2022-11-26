@@ -1,0 +1,9 @@
+DEBUG ckvs_httpd.c:159:ckvs_httpd_mainloop(): Starting CKVS server on http://127.0.0.1:8000 for database small.ckvs
+
+DEBUG ckvs_httpd.c:81:ckvs_event_handler(): Event received 4
+DEBUG ckvs_httpd.c:97:ckvs_event_handler(): accepting connection at http://127.0.0.1:8000
+
+DEBUG ckvs_httpd.c:81:ckvs_event_handler(): Event received 8
+DEBUG ckvs_httpd.c:81:ckvs_event_handler(): Event received 5
+DEBUG ckvs_httpd.c:81:ckvs_event_handler(): Event received 6
+DEBUG ckvs_httpd.c:81:ckvs_event_handler(): Event received 7

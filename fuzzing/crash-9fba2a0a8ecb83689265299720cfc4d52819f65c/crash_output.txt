@@ -1,0 +1,28 @@
+/mnt/d/Programming/POS/pps22-dev/working-rendu02-1M/dedup-crashes/crash-9fba2a0a8ecb83689265299720cfc4d52819f65c
+/mnt/d/Programming/POS/pps22-dev/projects-rendu02/group_ad948f/./done/ckvs_local.c:119:13: runtime error: unsigned integer overflow: 18446744073709551615 + 32 cannot be represented in type 'unsigned long'
+SUMMARY: UndefinedBehaviorSanitizer: undefined-behavior /mnt/d/Programming/POS/pps22-dev/projects-rendu02/group_ad948f/./done/ckvs_local.c:119:13 in 
+==13132==WARNING: AddressSanitizer failed to allocate 0xffffffffffffffff bytes
+AddressSanitizer:DEADLYSIGNAL
+=================================================================
+==13132==ERROR: AddressSanitizer: SEGV on unknown address 0x000000000000 (pc 0x7f1c0558b701 bp 0x000000000029 sp 0x7fffe08361a8 T0)
+==13132==The signal is caused by a READ memory access.
+==13132==Hint: address points to the zero page.
+    #0 0x7f1c0558b701  (/lib/x86_64-linux-gnu/libc.so.6+0x18b701) (BuildId: 1878e6b475720c7c51969e69ab2d276fae6d1dee)
+    #1 0x7f1c0548f35d  (/lib/x86_64-linux-gnu/libc.so.6+0x8f35d) (BuildId: 1878e6b475720c7c51969e69ab2d276fae6d1dee)
+    #2 0x7f1c05482ee2 in _IO_fread (/lib/x86_64-linux-gnu/libc.so.6+0x82ee2) (BuildId: 1878e6b475720c7c51969e69ab2d276fae6d1dee)
+    #3 0x7f1c05ec9bdf in fread (/mnt/d/Programming/POS/pps22-dev/working-rendu02-1M/build/group_ad948f/fuzz-target+0x81bdf) (BuildId: df59e33090ca87e64083deb842bf0f35eb6441e8)
+    #4 0x7f1c05f806c0 in ckvs_local_getset /mnt/d/Programming/POS/pps22-dev/projects-rendu02/group_ad948f/./done/ckvs_local.c:137:23
+    #5 0x7f1c05f812b1 in ckvs_local_get /mnt/d/Programming/POS/pps22-dev/projects-rendu02/group_ad948f/./done/ckvs_local.c:196:12
+    #6 0x7f1c05f753ba in ckvs_do_one_cmd /mnt/d/Programming/POS/pps22-dev/projects-rendu02/group_ad948f/./done/cryptkvs.c:69:55
+    #7 0x7f1c05f72b79 in LLVMFuzzerTestOneInput /mnt/d/Programming/POS/pps22-dev/resources/cs212-2022/fuzz-target.c:59:13
+    #8 0x7f1c05e94ed3 in fuzzer::Fuzzer::ExecuteCallback(unsigned char const*, unsigned long) (/mnt/d/Programming/POS/pps22-dev/working-rendu02-1M/build/group_ad948f/fuzz-target+0x4ced3) (BuildId: df59e33090ca87e64083deb842bf0f35eb6441e8)
+    #9 0x7f1c05e7f29f in fuzzer::RunOneTest(fuzzer::Fuzzer*, char const*, unsigned long) (/mnt/d/Programming/POS/pps22-dev/working-rendu02-1M/build/group_ad948f/fuzz-target+0x3729f) (BuildId: df59e33090ca87e64083deb842bf0f35eb6441e8)
+    #10 0x7f1c05e84fa6 in fuzzer::FuzzerDriver(int*, char***, int (*)(unsigned char const*, unsigned long)) (/mnt/d/Programming/POS/pps22-dev/working-rendu02-1M/build/group_ad948f/fuzz-target+0x3cfa6) (BuildId: df59e33090ca87e64083deb842bf0f35eb6441e8)
+    #11 0x7f1c05eae5c2 in main (/mnt/d/Programming/POS/pps22-dev/working-rendu02-1M/build/group_ad948f/fuzz-target+0x665c2) (BuildId: df59e33090ca87e64083deb842bf0f35eb6441e8)
+    #12 0x7f1c05424082 in __libc_start_main (/lib/x86_64-linux-gnu/libc.so.6+0x24082) (BuildId: 1878e6b475720c7c51969e69ab2d276fae6d1dee)
+    #13 0x7f1c05e79a8d in _start (/mnt/d/Programming/POS/pps22-dev/working-rendu02-1M/build/group_ad948f/fuzz-target+0x31a8d) (BuildId: df59e33090ca87e64083deb842bf0f35eb6441e8)
+
+DEDUP_TOKEN: _IO_fread--fread--ckvs_local_getset--ckvs_local_get--ckvs_do_one_cmd--LLVMFuzzerTestOneInput--fuzzer::Fuzzer::ExecuteCallback(unsigned char const*, unsigned long)--fuzzer::RunOneTest(fuzzer::Fuzzer*, char const*, unsigned long)--fuzzer::FuzzerDriver(int*, char***, int (*)(unsigned char const*, unsigned long))--main--__libc_start_main--_start
+AddressSanitizer can not provide additional info.
+SUMMARY: AddressSanitizer: SEGV (/lib/x86_64-linux-gnu/libc.so.6+0x18b701) (BuildId: 1878e6b475720c7c51969e69ab2d276fae6d1dee) 
+==13132==ABORTING
